@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -59,16 +58,18 @@ nav{background:#080808;padding:18px 32px;display:flex;justify-content:space-betw
 .form-group{margin-bottom:18px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
 label{display:block;font-size:7.5pt;letter-spacing:2px;text-transform:uppercase;color:#C9A84C;font-family:Arial,sans-serif;margin-bottom:6px}
-input[type=“text”],
-input[type=“email”],
-input[type=“tel”],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 select,
 textarea{width:100%;padding:12px 14px;background:#1A1A1A;border:1px solid rgba(201,168,76,0.2);color:#fff;font-family:Georgia,serif;font-size:10pt;outline:none;transition:border-color 0.2s;-webkit-appearance:none;border-radius:0}
 input:focus,select:focus,textarea:focus{border-color:#C9A84C}
 input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.2);font-style:italic}
-select{cursor:pointer;background-image:url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘10’ height=‘6’%3E%3Cpath d=‘M1 1l4 4 4-4’ stroke=’%23C9A84C’ stroke-width=‘1.2’ fill=‘none’/%3E%3C/svg%3E”);background-repeat:no-repeat;background-position:right 14px center;background-color:#1A1A1A;padding-right:36px}
+select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C9A84C' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-color:#1A1A1A;padding-right:36px}
 select option{background:#1A1A1A;color:#fff}
 textarea{resize:vertical;min-height:100px}
+
+
 
 /* SUBMIT */
 .submit-area{margin-top:24px;text-align:center}
@@ -93,27 +94,24 @@ footer{background:#050505;padding:20px 32px;display:flex;justify-content:space-b
 
 /* MOBILE */
 @media(max-width:600px){
-.stats-band{flex-wrap:wrap}
-.stat-item{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(201,168,76,0.08);padding:18px 16px}
-.services-grid{grid-template-columns:1fr}
-.form-row{grid-template-columns:1fr}
-.trust-row{gap:12px}
-footer{flex-direction:column;text-align:center}
+  .stats-band{flex-wrap:wrap}
+  .stat-item{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(201,168,76,0.08);padding:18px 16px}
+  .services-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .trust-row{gap:12px}
+  footer{flex-direction:column;text-align:center}
 }
 </style>
-
 </head>
 <body>
 
 <!-- NAV -->
-
 <nav>
   <a href="#" class="logo">CBI<span>.</span></a>
   <div class="nav-right">Career Bureau of Investigations</div>
 </nav>
 
 <!-- HERO -->
-
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="hero-content">
@@ -128,7 +126,6 @@ footer{flex-direction:column;text-align:center}
 <div class="gold-bar"></div>
 
 <!-- STATS BAND -->
-
 <div class="stats-band">
   <div class="stat-item">
     <div class="stat-num">15+</div>
@@ -151,7 +148,6 @@ footer{flex-direction:column;text-align:center}
 <div class="gold-bar"></div>
 
 <!-- SERVICES -->
-
 <div class="services">
   <div class="section-eyebrow">What We Do</div>
   <h2 class="section-title">The Case File Services</h2>
@@ -193,7 +189,6 @@ footer{flex-direction:column;text-align:center}
 <div class="gold-bar"></div>
 
 <!-- INTAKE FORM -->
-
 <div class="form-section" id="intake">
   <div class="form-intro">
     <div class="section-eyebrow">Start Here</div>
@@ -203,132 +198,130 @@ footer{flex-direction:column;text-align:center}
 
   <div class="form-box">
 
-```
-<form id="cbiForm" action="https://formspree.io/f/xreoyeee" method="POST">
-  <input type="hidden" name="_subject" value="New CBI Case Opened"/>
-  <input type="hidden" name="_next" value="https://cbi-careers.github.io/?submitted=true"/>
+    <form id="cbiForm" action="https://formspree.io/f/xreoyeee" method="POST">
+      <input type="hidden" name="_subject" value="New CBI Case Opened"/>
+      <input type="hidden" name="_next" value="https://cbi-careers.github.io/?submitted=true"/>
 
-  <!-- Name -->
-  <div class="form-row">
-    <div class="form-group">
-      <label>First Name *</label>
-      <input type="text" name="firstName" placeholder="Your first name" required/>
-    </div>
-    <div class="form-group">
-      <label>Last Name *</label>
-      <input type="text" name="lastName" placeholder="Your last name" required/>
-    </div>
-  </div>
+      <!-- Name -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" name="firstName" placeholder="Your first name" required/>
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" name="lastName" placeholder="Your last name" required/>
+        </div>
+      </div>
 
-  <!-- Contact -->
-  <div class="form-row">
-    <div class="form-group">
-      <label>Phone Number *</label>
-      <input type="tel" name="phone" placeholder="(000) 000-0000" required/>
-    </div>
-    <div class="form-group">
-      <label>Email Address *</label>
-      <input type="email" name="email" placeholder="your@email.com" required/>
-    </div>
-  </div>
+      <!-- Contact -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" placeholder="(000) 000-0000" required/>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" placeholder="your@email.com" required/>
+        </div>
+      </div>
 
-  <!-- Location and Contact Method -->
-  <div class="form-row">
-    <div class="form-group">
-      <label>City and State *</label>
-      <input type="text" name="location" placeholder="City, State" required/>
+      <!-- Location and Contact Method -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>City and State *</label>
+          <input type="text" name="location" placeholder="City, State" required/>
+        </div>
+        <div class="form-group">
+          <label>Preferred Contact *</label>
+          <select name="contactMethod" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Text Message</option>
+            <option>Email</option>
+            <option>Phone Call</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Target Role and Timeline -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Target Role *</label>
+          <input type="text" name="targetRole" placeholder="e.g. Operations Manager, RN, IT Director" required/>
+        </div>
+        <div class="form-group">
+          <label>How Soon Are You Looking? *</label>
+          <select name="timeline" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Immediately — I need this now</option>
+            <option>Within 30 days</option>
+            <option>Within 60 to 90 days</option>
+            <option>Just exploring for now</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Accomplishments -->
+      <div class="form-group">
+        <label>Top Accomplishments * — include numbers if you have them</label>
+        <textarea name="accomplishments" placeholder="Example: Reduced denials by 18%&#10;Example: Managed a team of 12&#10;Example: Reconciled $200K weekly&#10;&#10;List 3 to 5 — do not worry about wording" required></textarea>
+      </div>
+
+      <!-- What is holding you back -->
+      <div class="form-group">
+        <label>What Is Holding You Back?</label>
+        <textarea name="holdingBack" placeholder="Resume quality, certifications, confidence, employment gap — we have seen it all and we are here to help" style="min-height:80px"></textarea>
+      </div>
+
+      <!-- How did you hear -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>How Did You Find CBI?</label>
+          <select name="referralSource">
+            <option value="" disabled selected>Select one</option>
+            <option>Instagram</option>
+            <option>TikTok</option>
+            <option>LinkedIn</option>
+            <option>Facebook</option>
+            <option>Word of Mouth</option>
+            <option>Google Search</option>
+            <option>Serve Day</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Referred By</label>
+          <input type="text" name="referredBy" placeholder="First and last name"/>
+        </div>
+      </div>
+
+      <!-- Resume Paste -->
+      <div class="form-group">
+        <label>Paste Your Resume Here</label>
+        <textarea name="resume" placeholder="Copy and paste the text from your current resume here. A rough draft or old version is perfectly fine — we will take it from there." style="min-height:160px"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-area">
+        <p class="submit-note">By submitting this form you agree that CBI may contact you. All information is confidential and never sold or shared.</p>
+        <button type="submit" class="submit-btn">Open My Case</button>
+        <div class="trust-row">
+          <span class="trust-item">Strictly Confidential</span>
+          <span class="trust-item">Files Never Shared Without Permission</span>
+          <span class="trust-item">24 Hour Response</span>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Success Message -->
+    <div class="success-msg" id="successMsg">
+      <div class="success-title">Case <span>Opened.</span></div>
+      <div class="success-rule"></div>
+      <p class="success-text">Your information has been received and your case is officially open. A CBI investigator will be in touch within 24 hours to begin your transformation.</p>
+      <br/>
+      <p style="font-size:9pt;color:rgba(201,168,76,0.4);font-style:italic;">These are their stories.</p>
     </div>
-    <div class="form-group">
-      <label>Preferred Contact *</label>
-      <select name="contactMethod" required>
-        <option value="" disabled selected>Select one</option>
-        <option>Text Message</option>
-        <option>Email</option>
-        <option>Phone Call</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Target Role and Timeline -->
-  <div class="form-row">
-    <div class="form-group">
-      <label>Target Role *</label>
-      <input type="text" name="targetRole" placeholder="e.g. Operations Manager, RN, IT Director" required/>
-    </div>
-    <div class="form-group">
-      <label>How Soon Are You Looking? *</label>
-      <select name="timeline" required>
-        <option value="" disabled selected>Select one</option>
-        <option>Immediately — I need this now</option>
-        <option>Within 30 days</option>
-        <option>Within 60 to 90 days</option>
-        <option>Just exploring for now</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Accomplishments -->
-  <div class="form-group">
-    <label>Top Accomplishments * — include numbers if you have them</label>
-    <textarea name="accomplishments" placeholder="Example: Reduced denials by 18%&#10;Example: Managed a team of 12&#10;Example: Reconciled $200K weekly&#10;&#10;List 3 to 5 — do not worry about wording" required></textarea>
-  </div>
-
-  <!-- What is holding you back -->
-  <div class="form-group">
-    <label>What Is Holding You Back?</label>
-    <textarea name="holdingBack" placeholder="Resume quality, certifications, confidence, employment gap — we have seen it all and we are here to help" style="min-height:80px"></textarea>
-  </div>
-
-  <!-- How did you hear -->
-  <div class="form-row">
-    <div class="form-group">
-      <label>How Did You Find CBI?</label>
-      <select name="referralSource">
-        <option value="" disabled selected>Select one</option>
-        <option>Instagram</option>
-        <option>TikTok</option>
-        <option>LinkedIn</option>
-        <option>Facebook</option>
-        <option>Word of Mouth</option>
-        <option>Google Search</option>
-        <option>Serve Day</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Referred By</label>
-      <input type="text" name="referredBy" placeholder="First and last name"/>
-    </div>
-  </div>
-
-  <!-- Resume Paste -->
-  <div class="form-group">
-    <label>Paste Your Resume Here</label>
-    <textarea name="resume" placeholder="Copy and paste the text from your current resume here. A rough draft or old version is perfectly fine — we will take it from there." style="min-height:160px"></textarea>
-  </div>
-
-  <!-- Submit -->
-  <div class="submit-area">
-    <p class="submit-note">By submitting this form you agree that CBI may contact you. All information is confidential and never sold or shared.</p>
-    <button type="submit" class="submit-btn">Open My Case</button>
-    <div class="trust-row">
-      <span class="trust-item">Strictly Confidential</span>
-      <span class="trust-item">Files Never Shared Without Permission</span>
-      <span class="trust-item">24 Hour Response</span>
-    </div>
-  </div>
-
-</form>
-
-<!-- Success Message -->
-<div class="success-msg" id="successMsg">
-  <div class="success-title">Case <span>Opened.</span></div>
-  <div class="success-rule"></div>
-  <p class="success-text">Your information has been received and your case is officially open. A CBI investigator will be in touch within 24 hours to begin your transformation.</p>
-  <br/>
-  <p style="font-size:9pt;color:rgba(201,168,76,0.4);font-style:italic;">These are their stories.</p>
-</div>
-```
 
   </div>
 </div>
@@ -336,7 +329,6 @@ footer{flex-direction:column;text-align:center}
 <div class="gold-bar"></div>
 
 <!-- FOOTER -->
-
 <footer>
   <div class="footer-left">CBI — Career Bureau of Investigations &nbsp;|&nbsp; All information is confidential</div>
   <div class="footer-right">We build the case. You close the deal.</div>

@@ -70,14 +70,6 @@ select{cursor:pointer;background-image:url(“data:image/svg+xml,%3Csvg xmlns=�
 select option{background:#1A1A1A;color:#fff}
 textarea{resize:vertical;min-height:100px}
 
-/* FILE UPLOAD */
-.file-upload{border:1px dashed rgba(201,168,76,0.25);background:#111;padding:24px;text-align:center;cursor:pointer;transition:border-color 0.2s;position:relative}
-.file-upload:hover{border-color:#C9A84C}
-.file-upload input[type=“file”]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.file-upload-title{font-size:10pt;font-weight:700;color:#fff;margin-bottom:4px}
-.file-upload-sub{font-size:8pt;color:rgba(255,255,255,0.25);font-style:italic}
-.file-upload-secure{font-size:7.5pt;color:rgba(201,168,76,0.5);margin-top:8px;font-family:Arial,sans-serif}
-
 /* SUBMIT */
 .submit-area{margin-top:24px;text-align:center}
 .submit-note{font-size:8pt;color:rgba(255,255,255,0.25);font-style:italic;margin-bottom:16px;font-family:Arial,sans-serif}
@@ -129,7 +121,6 @@ footer{flex-direction:column;text-align:center}
     <h1 class="hero-title">Every Career Has<br/><span class="gold">Evidence.</span><br/>We Find It.</h1>
     <div class="hero-rule"></div>
     <p class="hero-tagline">We build the case. <strong>You close the deal.</strong></p>
-    <p style="font-size:8pt;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.3);font-family:Arial,sans-serif;margin-top:-28px;margin-bottom:40px;">Every UNSUB deserves a closed case.</p>
     <a href="#intake" class="hero-btn">Open Your Case</a>
   </div>
 </div>
@@ -215,7 +206,7 @@ footer{flex-direction:column;text-align:center}
 ```
 <form id="cbiForm" action="https://formspree.io/f/xreoyeee" method="POST">
   <input type="hidden" name="_subject" value="New CBI Case Opened"/>
-  <input type="hidden" name="_replyto" value=""/>
+  <input type="hidden" name="_next" value="https://cbi-careers.github.io/?submitted=true"/>
 
   <!-- Name -->
   <div class="form-row">
@@ -310,15 +301,10 @@ footer{flex-direction:column;text-align:center}
     </div>
   </div>
 
-  <!-- Resume Upload -->
+  <!-- Resume Paste -->
   <div class="form-group">
-    <label>Upload Your Resume</label>
-    <div class="file-upload">
-      <input type="file" name="resume" accept=".pdf,.doc,.docx" onchange="handleFile(this)"/>
-      <div class="file-upload-title" id="fileLabel">Click to upload or drag and drop</div>
-      <div class="file-upload-sub">PDF or Word only — Max 5MB — A rough draft is perfectly fine</div>
-      <div class="file-upload-secure">Your file is never shared without your permission</div>
-    </div>
+    <label>Paste Your Resume Here</label>
+    <textarea name="resume" placeholder="Copy and paste the text from your current resume here. A rough draft or old version is perfectly fine — we will take it from there." style="min-height:160px"></textarea>
   </div>
 
   <!-- Submit -->
@@ -357,14 +343,6 @@ footer{flex-direction:column;text-align:center}
 </footer>
 
 <script>
-// File upload label
-function handleFile(input) {
-  if (input.files && input.files[0]) {
-    document.getElementById('fileLabel').textContent = '✓  ' + input.files[0].name;
-    document.getElementById('fileLabel').style.color = '#4A9A5A';
-  }
-}
-
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -374,28 +352,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Form submission
-const form = document.getElementById('cbiForm');
-form.addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const data = new FormData(form);
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-    if (response.ok) {
-      form.style.display = 'none';
-      document.getElementById('successMsg').classList.add('show');
-      window.scrollTo({ top: document.getElementById('intake').offsetTop - 80, behavior: 'smooth' });
-    } else {
-      alert('Something went wrong. Please email us directly at openyourcbicase@gmail.com');
-    }
-  } catch(err) {
-    alert('Something went wrong. Please email us directly at openyourcbicase@gmail.com');
-  }
-});
+// Show success message if redirected back after Formspree submission
+if (window.location.search.includes('submitted=true')) {
+  var f = document.getElementById('cbiForm');
+  var s = document.getElementById('successMsg');
+  if (f) f.style.display = 'none';
+  if (s) s.classList.add('show');
+  var intake = document.getElementById('intake');
+  if (intake) intake.scrollIntoView({ behavior: 'smooth' });
+}
 </script>
 
 </body>
